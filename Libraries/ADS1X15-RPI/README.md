@@ -1,21 +1,15 @@
-
-[![Arduino CI](https://github.com/RobTillaart/ADS1X15/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![Arduino-lint](https://github.com/RobTillaart/ADS1X15/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/ADS1X15/actions/workflows/arduino-lint.yml)
-[![JSON check](https://github.com/RobTillaart/ADS1X15/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/ADS1X15/actions/workflows/jsoncheck.yml)
-[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/ADS1X15.svg)](https://github.com/RobTillaart/ADS1X15/issues)
-
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/ADS1X15/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/ADS1X15.svg?maxAge=3600)](https://github.com/RobTillaart/ADS1X15/releases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/ADS1X15.svg)](https://registry.platformio.org/libraries/robtillaart/ADS1X15)
-
-
 # ADS1X15
 
-Arduino library for I2C ADC ADS1015, ADS1115, and similar.
+C++ Raspberry Pi library for I2C ADC ADS1015, ADS1115, and similar.
 
-For using I2C ADC with Raspberry pi or other SBC with Linux OS,
+For using I2C ADC with Python Raspberry pi or other SBC with Linux OS,
 you can check similar library [here](https://github.com/chandrawi/ADS1x15-ADC).
 
+This Library Forked from Rob Tillaart    
+VERSION: Forked from 0.4.0    
+DATE: 2023-03-24     
+PUPROSE: C++ Raspberry Pi library for ADS1015 and ADS1115   
+URL: Forked from https://github.com/RobTillaart/ADS1X15   
 
 ## Description
 
@@ -35,21 +29,6 @@ although not all sensors support all functionality.
 As the ADS1015 and the ADS1115 are both 4 channels these are the most
 interesting from functionality point of view as these can also do
 differential measurements.
-
-
-#### 0.4.0 Breaking change
-
-Version 0.4.0 introduced a breaking change.
-You cannot set the pins in **begin()** any more.
-This reduces the dependency of processor dependent Wire implementations.
-The user has to call **Wire.begin()** and can optionally set the Wire pins 
-before calling **begin()**.
-
-
-#### Related
-
-- https://github.com/RobTillaart/MCP_ADC  (10 & 12 bit ADC, SPI, fast)
-- https://github.com/RobTillaart/PCF8591  (8 bit ADC + 1 bit DAC)
 
 
 ## I2C Address
@@ -76,19 +55,10 @@ is connected to:
 To initialize the library you must call a constructor as described below.
 
 - **ADS1x15()** base constructor, should not be used.
-- **ADS1013(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
+- **ADS1013(uint8_t Address = ADS1015_ADDRESS, const char\* i2c_device_path = "/dev/i2c-1")** 
+Constructor with device address,
 and optional the Wire interface as parameter.
-- **ADS1014(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
-and optional the Wire interface as parameter.
-- **ADS1015(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
-and optional the Wire interface as parameter.
-- **ADS1113(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
-and optional the Wire interface as parameter.
-- **ADS1114(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
-and optional the Wire interface as parameter.
-- **ADS1115(uint8_t address, TwoWire \*wire = &Wire)** Constructor with device address,
-and optional the Wire interface as parameter.
-
+- **for ADS1014,ADS1015,ADS1113,ADS1114,ADS1115 is simillar to ADS1013**
 
 After construction the **ADS.begin()** need to be called. This will return false
 if an invalid address is used.
@@ -110,24 +80,6 @@ void begin() {
   }
 }
 ```
-
-
-#### I2C clock speed
-
-The function **void setWireClock(uint32_t speed = 100000)** is used to set the clock speed
-in Hz of the used I2C interface. typical value is 100 KHz.
-
-The function **uint32_t getWireClock()** is a prototype.
-It returns the value set by setWireClock().
-This is not necessary the actual value.
-When no value is set **getWireClock()** returns 0.
-Need to implement a read / calculate from low level I2C code (e.g. TWBR on AVR),
-better the Arduino Wire lib should support this call (ESP32 does).
-
-See - https://github.com/arduino/Arduino/issues/11457
-
-Question: Should this functionality be in this library?
-
 
 #### Programmable Gain
 
