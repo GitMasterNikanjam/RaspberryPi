@@ -1,12 +1,12 @@
-old kernel inf:
-Linux lotus 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux
+**old kernel inf:**   
+Linux lotus 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux    
 
-new kernel real time kernel inf:
-Linux lotus 6.1.77-rt24-v8+ #1 SMP PREEMPT_RT Tue Feb 13 17:01:58 +0330 2024 aarch64 GNU/Linux
-DEPMOD  /home/farazcomm/rpi-kernel/rt-kernel/lib/modules/6.1.77-rt24-v8+
+**new kernel real time kernel inf:**       
+Linux lotus 6.1.77-rt24-v8+ #1 SMP PREEMPT_RT Tue Feb 13 17:01:58 +0330 2024 aarch64 GNU/Linux   
+DEPMOD  /home/farazcomm/rpi-kernel/rt-kernel/lib/modules/6.1.77-rt24-v8+    
 
-test benchmark for old kernel: sudo cyclictest -t20 -p 80 -i 10000 -l 5000
-
+test benchmark for old kernel: sudo cyclictest -t20 -p 80 -i 10000 -l 5000    
+```
 for old kernel:
 T: 0 ( 1633) P:80 I:10000 C:   5000 Min:      9 Act:   11 Avg:   21 Max:     161
 T: 1 ( 1634) P:80 I:10500 C:   4762 Min:      9 Act:   10 Avg:   20 Max:     185
@@ -50,3 +50,4 @@ T:16 ( 1207) P:80 I:18000 C:   2778 Min:      4 Act:   13 Avg:    9 Max:      79
 T:17 ( 1208) P:80 I:18500 C:   2703 Min:      4 Act:   12 Avg:    9 Max:      78
 T:18 ( 1209) P:80 I:19000 C:   2631 Min:      4 Act:    8 Avg:   10 Max:      96
 T:19 ( 1210) P:80 I:19500 C:   2564 Min:      5 Act:    8 Avg:    9 Max:     100
+```
