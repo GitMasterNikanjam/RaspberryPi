@@ -1,3 +1,6 @@
+This real time kernel can used for raspberry pi 4 and raspberry pi 3 hardwares.  
+Before install real time kernel you sould install **2023-12-05-raspios-bullseye-arm64-full** raspberrian os.   
+
 **old kernel inf:**   
 Linux lotus 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux    
 
