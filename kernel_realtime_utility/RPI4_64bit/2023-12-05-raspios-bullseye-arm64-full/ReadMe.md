@@ -1,5 +1,6 @@
 This real time kernel can used for raspberry pi 4 and raspberry pi 3 hardwares.  
 Before install real time kernel you sould install **2023-12-05-raspios-bullseye-arm64-full** raspberrian os.  
+This real time kernel is based on **patch-6.1.77-rt24.patch** real time patch.   
 
 ---------------------------------------------------------------
 ## Installation Guide:  
