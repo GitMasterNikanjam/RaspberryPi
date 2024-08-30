@@ -2,6 +2,11 @@ This real time kernel can used for raspberry pi 4 and raspberry pi 3 hardwares.
 Before install real time kernel you sould install **2023-12-05-raspios-bullseye-arm64-full** raspberrian os.  
 
 ---------------------------------------------------------------
+## Installation Guide:  
+1) Install "2023-12-05-raspios-bullseye-arm64-full" os on your raspberry pi 3 or 4.
+2) Install "rt-kernel.tgz" kernel on your os. **Use manual from bellow link**.
+   https://github.com/GitMasterNikanjam/RaspberryPi_utility/wiki/Real-Time-KERNEL-Installation
+---------------------------------------------------------------
 Example for test performance before and after real time kernel installation.  
 
 **old kernel inf:**   
